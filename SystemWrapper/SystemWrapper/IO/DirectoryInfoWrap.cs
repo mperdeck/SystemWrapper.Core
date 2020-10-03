@@ -1,7 +1,6 @@
 using System;
 using System.IO;
 using System.Runtime.InteropServices;
-using System.Runtime.Remoting;
 using System.Security.AccessControl;
 using SystemInterface;
 using SystemInterface.IO;
@@ -156,12 +155,6 @@ namespace SystemWrapper.IO
         public void Create(IDirectorySecurity directorySecurity)
         {
             DirectoryInfo.Create(directorySecurity.DirectorySecurityInstance);
-        }
-
-        /// <inheritdoc />
-        public ObjRef CreateObjRef(Type requestedType)
-        {
-            return DirectoryInfo.CreateObjRef(requestedType);
         }
 
         /// <inheritdoc />

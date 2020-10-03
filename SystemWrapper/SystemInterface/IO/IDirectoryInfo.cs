@@ -1,6 +1,5 @@
 using System;
 using System.IO;
-using System.Runtime.Remoting;
 using System.Security.AccessControl;
 using SystemInterface.Security.AccessControl;
 
@@ -108,13 +107,6 @@ namespace SystemInterface.IO
         /// </summary>
         /// <param name="directorySecurity">The access control to apply to the directory.</param>
         void Create(IDirectorySecurity directorySecurity);
-
-        /// <summary>
-        /// Creates an object that contains all the relevant information required to generate a proxy used to communicate with a remote object.
-        /// </summary>
-        /// <param name="requestedType">The <see cref="T:System.Type"/> of the object that the new <see cref="T:System.Runtime.Remoting.ObjRef"/> will reference. </param>
-        /// <returns>Information required to generate a proxy.</returns>
-        ObjRef CreateObjRef(Type requestedType);
 
         /// <summary>
         /// Creates a subdirectory or subdirectories on the specified path. The specified path can be relative to this instance of the IDirectoryInfoWrap class.

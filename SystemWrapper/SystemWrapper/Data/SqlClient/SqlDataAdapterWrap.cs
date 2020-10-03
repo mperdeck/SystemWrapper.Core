@@ -5,7 +5,6 @@
     using System.Data;
     using System.Data.Common;
     using System.Data.SqlClient;
-    using System.Runtime.Remoting;
 
     using SystemInterface.Data.SqlClient;
 
@@ -429,20 +428,6 @@
         #endregion
 
         #region Public Methods and Operators
-
-        /// <summary>
-        ///     Creates an object that contains all the relevant information required to generate a proxy used to communicate with a remote object.
-        /// </summary>
-        /// <param name="requestedType">
-        ///     The requested type.
-        /// </param>
-        /// <returns>
-        ///     The <see cref="ObjRef"/>.
-        /// </returns>
-        public ObjRef CreateObjRef(Type requestedType)
-        {
-            return this.sqlDataAdapterInstance.CreateObjRef(requestedType);
-        }
 
         /// <summary>
         ///     Disposes of the <see cref='System.ComponentModel.Component'/>.

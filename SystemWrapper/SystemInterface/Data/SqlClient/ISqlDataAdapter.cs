@@ -5,7 +5,6 @@
     using System.Data;
     using System.Data.Common;
     using System.Data.SqlClient;
-    using System.Runtime.Remoting;
 
     /// <summary>
     ///     Wrapper for <see cref="T:System.Data.SqlClient.SqlCommand"/> class.
@@ -172,17 +171,6 @@
         // event SqlRowUpdatingEventHandler RowUpdating
 
         #region Public Methods and Operators
-
-        /// <summary>
-        ///     Creates an object that contains all the relevant information required to generate a proxy used to communicate with a remote object.
-        /// </summary>
-        /// <param name="requestedType">
-        ///     The requested type.
-        /// </param>
-        /// <returns>
-        ///     The <see cref="ObjRef"/>.
-        /// </returns>
-        ObjRef CreateObjRef(Type requestedType);
 
         /// <summary>
         ///     Disposes of the <see cref='System.ComponentModel.Component'/>.
