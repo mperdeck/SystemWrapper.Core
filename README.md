@@ -1,2 +1,3 @@
 # SystemWrapper.Core
-Version of SystemWrapper for .Net Core
+Version for .Net Core of [SystemWrapper by Jozef Izso](https://github.com/jozefizso/SystemWrapper)
+
