@@ -14,7 +14,7 @@ namespace SystemInterface.Reflection
     /// <summary>
     /// Wrapper for <see cref="System.Reflection.Assembly"/> class.
     /// </summary>
-    public interface IAssembly : IEvidenceFactory, ICustomAttributeProvider, ISerializable
+    public interface IAssembly : ICustomAttributeProvider, ISerializable
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="T:SystemInterface.Reflection.AssemblyWrap"/> class.

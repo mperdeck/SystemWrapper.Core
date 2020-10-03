@@ -81,12 +81,6 @@ namespace SystemWrapper.Reflection
         }
 
         /// <inheritdoc />
-        public Evidence Evidence
-        {
-            get { return AssemblyInstance.Evidence; }
-        }
-
-        /// <inheritdoc />
         public string FullName
         {
             get { return AssemblyInstance.FullName; }

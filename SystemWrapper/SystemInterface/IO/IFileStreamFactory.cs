@@ -144,40 +144,6 @@
                            int bufferSize,
                            FileOptions options);
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="T:SystemWrapper.IO.FileStreamWrap"/> class with the specified path, creation mode, access rights and sharing permission, the buffer size, and additional file options.
-        /// </summary>
-        /// <param name="path">A relative or absolute path for the file that the current FileStream object will encapsulate.</param>
-        /// <param name="mode">A FileMode constant that determines how to open or create the file.</param>
-        /// <param name="rights">A FileSystemRights constant that determines the access rights to use when creating access and audit rules for the file.</param>
-        /// <param name="share">A FileShare constant that determines how the file will be shared by processes. </param>
-        /// <param name="bufferSize">A positive Int32 value greater than 0 indicating the buffer size. For bufferSize values between one and eight, the actual buffer size is set to eight bytes.</param>
-        /// <param name="options">A FileOptions value that specifies additional file options.</param>
-        IFileStream Create(string path,
-                           FileMode mode,
-                           FileSystemRights rights,
-                           FileShare share,
-                           int bufferSize,
-                           FileOptions options);
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="T:SystemWrapper.IO.FileStreamWrap"/> class with the specified path, creation mode, access rights and sharing permission, the buffer size, additional file options, access control and audit security.
-        /// </summary>
-        /// <param name="path">A relative or absolute path for the file that the current FileStream object will encapsulate.</param>
-        /// <param name="mode">A FileMode constant that determines how to open or create the file.</param>
-        /// <param name="rights">A FileSystemRights constant that determines the access rights to use when creating access and audit rules for the file.</param>
-        /// <param name="share">A FileShare constant that determines how the file will be shared by processes. </param>
-        /// <param name="bufferSize">A positive Int32 value greater than 0 indicating the buffer size. For bufferSize values between one and eight, the actual buffer size is set to eight bytes.</param>
-        /// <param name="options">A FileOptions value that specifies additional file options.</param>
-        /// <param name="fileSecurity">A FileSecurity constant that determines the access control and audit security for the file.</param>
-        IFileStream Create(string path,
-                           FileMode mode,
-                           FileSystemRights rights,
-                           FileShare share,
-                           int bufferSize,
-                           FileOptions options,
-                           FileSecurity fileSecurity);
-
         #endregion
     }
 }

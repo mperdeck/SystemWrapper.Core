@@ -20,27 +20,9 @@ namespace SystemInterface.Reflection
         IAssembly Load(string assemblyString);
 
         [MethodImpl(MethodImplOptions.NoInlining)]
-        IAssembly Load(IAssemblyName assemblyRef, Evidence assemblySecurity);
-
-        [MethodImpl(MethodImplOptions.NoInlining)]
-        IAssembly Load(string assemblyString, Evidence assemblySecurity);
-
-        [MethodImpl(MethodImplOptions.NoInlining)]
         IAssembly Load(byte[] rawAssembly, byte[] rawSymbolStore);
 
-        [MethodImpl(MethodImplOptions.NoInlining), SecurityPermission(SecurityAction.Demand, Flags = SecurityPermissionFlag.ControlEvidence)]
-        IAssembly Load(byte[] rawAssembly, byte[] rawSymbolStore, Evidence securityEvidence);
-
         IAssembly LoadFile(string path);
-
-        [SecurityPermission(SecurityAction.Demand, Flags = SecurityPermissionFlag.ControlEvidence)]
-        IAssembly LoadFile(string path, Evidence securityEvidence);
-
-        [MethodImpl(MethodImplOptions.NoInlining)]
-        IAssembly LoadFrom(string assemblyFile, Evidence securityEvidence);
-
-        [MethodImpl(MethodImplOptions.NoInlining)]
-        IAssembly LoadFrom(string assemblyFile, Evidence securityEvidence, byte[] hashValue, AssemblyHashAlgorithm hashAlgorithm);
 
         [MethodImpl(MethodImplOptions.NoInlining)]
         IAssembly ReflectionOnlyLoad(string assemblyString);

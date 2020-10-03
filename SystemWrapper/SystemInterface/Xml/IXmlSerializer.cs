@@ -126,17 +126,6 @@
                                      Type type);
 
         /// <summary>
-        ///     Returns an instance of the <see cref="T:System.Xml.Serialization.XmlSerializer"/> class created from mappings of one XML type to another.
-        /// </summary>
-        /// <returns>
-        ///     An instance of the <see cref="T:System.Xml.Serialization.XmlSerializer"/> class.
-        /// </returns>
-        /// <param name="mappings">An array of <see cref="T:System.Xml.Serialization.XmlMapping"/> objects used to map one type to another.</param><param name="evidence">An instance of the <see cref="T:System.Security.Policy.Evidence"/> class that contains host and assembly data presented to the common language runtime policy system.</param>
-        [Obsolete("This method is obsolete and will be removed in a future release of the .NET Framework. Please use an overload of FromMappings which does not take an Evidence parameter. See http://go2.microsoft.com/fwlink/?LinkId=131738 for more information.")]
-        XmlSerializer[] FromMappings(XmlMapping[] mappings,
-                                     Evidence evidence);
-
-        /// <summary>
         ///     Returns an array of <see cref="T:System.Xml.Serialization.XmlSerializer"/> objects created from an array of types.
         /// </summary>
         /// <returns>
@@ -144,27 +133,6 @@
         /// </returns>
         /// <param name="types">An array of <see cref="T:System.Type"/> objects. </param>
         XmlSerializer[] FromTypes(Type[] types);
-
-        /// <summary>
-        ///     Returns an assembly that contains custom-made serializers used to serialize or deserialize the specified type or types, using the specified mappings.
-        /// </summary>
-        /// <returns>
-        ///     An <see cref="T:System.Reflection.Assembly"/> object that contains serializers for the supplied types and mappings.
-        /// </returns>
-        /// <param name="types">A collection of types.</param><param name="mappings">A collection of <see cref="T:System.Xml.Serialization.XmlMapping"/> objects used to convert one type to another.</param>
-        Assembly GenerateSerializer(Type[] types,
-                                    XmlMapping[] mappings);
-
-        /// <summary>
-        ///     Returns an assembly that contains custom-made serializers used to serialize or deserialize the specified type or types, using the specified mappings and compiler settings and options.
-        /// </summary>
-        /// <returns>
-        ///     An <see cref="T:System.Reflection.Assembly"/> that contains special versions of the <see cref="T:System.Xml.Serialization.XmlSerializer"/>.
-        /// </returns>
-        /// <param name="types">An array of type <see cref="T:System.Type"/> that contains objects used to serialize and deserialize data.</param><param name="mappings">An array of type <see cref="T:System.Xml.Serialization.XmlMapping"/> that maps the XML data to the type data.</param><param name="parameters">An instance of the <see cref="T:System.CodeDom.Compiler.CompilerParameters"/> class that represents the parameters used to invoke a compiler.</param>
-        Assembly GenerateSerializer(Type[] types,
-                                    XmlMapping[] mappings,
-                                    CompilerParameters parameters);
 
         /// <summary>
         ///     Returns the name of the assembly that contains one or more versions of the <see cref="T:System.Xml.Serialization.XmlSerializer"/> especially created to serialize or deserialize the specified type.

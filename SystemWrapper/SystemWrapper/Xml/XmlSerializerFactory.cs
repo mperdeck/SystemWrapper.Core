@@ -28,22 +28,6 @@
         }
 
         /// <summary>
-        ///     Initializes a new instance of the <see cref="T:System.Xml.Serialization.XmlSerializer"/> class that can serialize objects of the specified type into XML document instances, and deserialize XML document instances into objects of the specified type. This overload allows you to supply other types that can be encountered during a serialization or deserialization operation, as well as a default namespace for all XML elements, the class to use as the XML root element, its location, and credentials required for access.
-        /// </summary>
-        /// <param name="type">The type of the object that this <see cref="T:System.Xml.Serialization.XmlSerializer"/> can serialize.</param><param name="overrides">An <see cref="T:System.Xml.Serialization.XmlAttributeOverrides"/> that extends or overrides the behavior of the class specified in the <paramref name="type"/> parameter.</param><param name="extraTypes">A <see cref="T:System.Type"/> array of additional object types to serialize.</param><param name="root">An <see cref="T:System.Xml.Serialization.XmlRootAttribute"/> that defines the XML root element properties.</param><param name="defaultNamespace">The default namespace of all XML elements in the XML document.</param><param name="location">The location of the types.</param><param name="evidence">An instance of the <see cref="T:System.Security.Policy.Evidence"/> class that contains credentials required to access types.</param>
-        [Obsolete("This method is obsolete and will be removed in a future release of the .NET Framework. Please use a XmlSerializer constructor overload which does not take an Evidence parameter. See http://go2.microsoft.com/fwlink/?LinkId=131738 for more information.")]
-        public IXmlSerializer Create(Type type,
-                                     XmlAttributeOverrides overrides,
-                                     Type[] extraTypes,
-                                     XmlRootAttribute root,
-                                     string defaultNamespace,
-                                     string location,
-                                     Evidence evidence)
-        {
-            return new XmlSerializerWrap(type, overrides, extraTypes, root, defaultNamespace, location, evidence);
-        }
-
-        /// <summary>
         ///     Initializes a new instance of the <see cref="T:System.Xml.Serialization.XmlSerializer"/> class that can serialize objects of type <see cref="T:System.Object"/> into XML document instances, and deserialize XML document instances into objects of type <see cref="T:System.Object"/>. Each object to be serialized can itself contain instances of classes, which this overload overrides with other classes. This overload also specifies the default namespace for all the XML elements and the class to use as the XML root element.
         /// </summary>
         /// <param name="type">The type of the object that this <see cref="T:System.Xml.Serialization.XmlSerializer"/> can serialize. </param><param name="overrides">An <see cref="T:System.Xml.Serialization.XmlAttributeOverrides"/> that extends or overrides the behavior of the class specified in the <paramref name="type"/> parameter. </param><param name="extraTypes">A <see cref="T:System.Type"/> array of additional object types to serialize. </param><param name="root">An <see cref="T:System.Xml.Serialization.XmlRootAttribute"/> that defines the XML root element properties. </param><param name="defaultNamespace">The default namespace of all XML elements in the XML document. </param>

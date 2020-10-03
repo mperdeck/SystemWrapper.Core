@@ -78,12 +78,6 @@ namespace SystemWrapper.IO
         }
 
         /// <inheritdoc />
-        public IFileStream Create(string path, int bufferSize, FileOptions options, IFileSecurity fileSecurity)
-        {
-            return new FileStreamWrap(File.Create(path, bufferSize, options, fileSecurity.FileSecurityInstance));
-        }
-
-        /// <inheritdoc />
         public IStreamWriter CreateText(string path)
         {
             return new StreamWriterWrap(File.CreateText(path));
@@ -111,18 +105,6 @@ namespace SystemWrapper.IO
         public bool Exists(string path)
         {
             return File.Exists(path);
-        }
-
-        /// <inheritdoc />
-        public IFileSecurity GetAccessControl(string path)
-        {
-            return new FileSecurityWrap(File.GetAccessControl(path));
-        }
-
-        /// <inheritdoc />
-        public IFileSecurity GetAccessControl(string path, AccessControlSections includeSections)
-        {
-            return new FileSecurityWrap(File.GetAccessControl(path, includeSections));
         }
 
         /// <inheritdoc />
@@ -260,12 +242,6 @@ namespace SystemWrapper.IO
         public void Replace(string sourceFileName, string destinationFileName, string destinationBackupFileName, bool ignoreMetadataErrors)
         {
             File.Replace(sourceFileName, destinationFileName, destinationBackupFileName, ignoreMetadataErrors);
-        }
-
-        /// <inheritdoc />
-        public void SetAccessControl(string path, IFileSecurity fileSecurity)
-        {
-            File.SetAccessControl(path, fileSecurity.FileSecurityInstance);
         }
 
         /// <inheritdoc />

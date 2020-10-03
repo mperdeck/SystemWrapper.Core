@@ -23,15 +23,6 @@ namespace SystemWrapper.IO
         }
 
         /// <inheritdoc />
-        public IDirectoryInfo CreateDirectory(string path, IDirectorySecurity directorySecurity)
-        {
-            if (directorySecurity == null)
-                throw new ArgumentNullException("directorySecurity");
-            DirectoryInfo di = Directory.CreateDirectory(path, directorySecurity.DirectorySecurityInstance);
-            return new DirectoryInfoWrap(di);
-        }
-
-        /// <inheritdoc />
         public void Delete(string path)
         {
             Directory.Delete(path);
@@ -47,18 +38,6 @@ namespace SystemWrapper.IO
         public bool Exists(string path)
         {
             return Directory.Exists(path);
-        }
-
-        /// <inheritdoc />
-        public IDirectorySecurity GetAccessControl(string path)
-        {
-            return new DirectorySecurityWrap(Directory.GetAccessControl(path));
-        }
-
-        /// <inheritdoc />
-        public IDirectorySecurity GetAccessControl(string path, AccessControlSections includeSections)
-        {
-            return new DirectorySecurityWrap(Directory.GetAccessControl(path, includeSections));
         }
 
         /// <inheritdoc />
@@ -174,14 +153,6 @@ namespace SystemWrapper.IO
         public void Move(string sourceDirName, string destDirName)
         {
             Directory.Move(sourceDirName, destDirName);
-        }
-
-        /// <inheritdoc />
-        public void SetAccessControl(string path, IDirectorySecurity directorySecurity)
-        {
-            if (directorySecurity == null)
-                throw new ArgumentNullException("directorySecurity");
-            Directory.SetAccessControl(path, directorySecurity.DirectorySecurityInstance);
         }
 
         /// <inheritdoc />

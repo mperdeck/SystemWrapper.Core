@@ -31,44 +31,14 @@ namespace SystemWrapper.Reflection
             return new AssemblyWrap(Assembly.Load(rawAssembly, rawSymbolStore));
         }
 
-        public IAssembly Load(string assemblyString, Evidence assemblySecurity)
-        {
-            return new AssemblyWrap(Assembly.Load(assemblyString, assemblySecurity));
-        }
-
-        public IAssembly Load(IAssemblyName assemblyRef, Evidence assemblySecurity)
-        {
-            return new AssemblyWrap(Assembly.Load(assemblyRef.AssemblyNameInstance, assemblySecurity));
-        }
-
-        public IAssembly Load(byte[] rawAssembly, byte[] rawSymbolStore, Evidence securityEvidence)
-        {
-            return new AssemblyWrap(Assembly.Load(rawAssembly, rawSymbolStore, securityEvidence));
-        }
-
         public IAssembly LoadFile(string path)
         {
             return new AssemblyWrap(Assembly.LoadFile(path));
         }
 
-        public IAssembly LoadFile(string path, Evidence securityEvidence)
-        {
-            return new AssemblyWrap(Assembly.LoadFile(path, securityEvidence));
-        }
-
         public IAssembly LoadFrom(string assemblyFile)
         {
             return new AssemblyWrap(Assembly.LoadFrom(assemblyFile));
-        }
-
-        public IAssembly LoadFrom(string assemblyFile, Evidence securityEvidence)
-        {
-            return new AssemblyWrap(Assembly.LoadFrom(assemblyFile, securityEvidence));
-        }
-
-        public IAssembly LoadFrom(string assemblyFile, Evidence securityEvidence, byte[] hashValue, AssemblyHashAlgorithm hashAlgorithm)
-        {
-            return new AssemblyWrap(Assembly.LoadFrom(assemblyFile, securityEvidence, hashValue, hashAlgorithm));
         }
 
         public IAssembly ReflectionOnlyLoad(byte[] rawAssembly)

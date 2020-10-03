@@ -164,12 +164,6 @@ namespace SystemWrapper.IO
         }
 
         /// <inheritdoc />
-        public IDirectoryInfo CreateSubdirectory(string path, IDirectorySecurity directorySecurity)
-        {
-            return new DirectoryInfoWrap(DirectoryInfo.CreateSubdirectory(path, directorySecurity.DirectorySecurityInstance));
-        }
-
-        /// <inheritdoc />
         public void Delete()
         {
             DirectoryInfo.Delete();

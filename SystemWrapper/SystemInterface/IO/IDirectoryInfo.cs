@@ -116,14 +116,6 @@ namespace SystemInterface.IO
         IDirectoryInfo CreateSubdirectory(string path);
 
         /// <summary>
-        /// Creates a subdirectory or subdirectories on the specified path with the specified security. The specified path can be relative to this instance of the IDirectoryInfoWrap class.
-        /// </summary>
-        /// <param name="path">The specified path. This cannot be a different disk volume or Universal Naming Convention (UNC) name. </param>
-        /// <param name="directorySecurity">The security to apply. </param>
-        /// <returns>The last directory specified in <paramref name="path"/>.</returns>
-        IDirectoryInfo CreateSubdirectory(string path, IDirectorySecurity directorySecurity);
-
-        /// <summary>
         /// Deletes this <see cref="T:System.IO.DirectoryInfo"/> if it is empty.
         /// </summary>
         void Delete();

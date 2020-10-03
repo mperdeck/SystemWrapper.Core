@@ -202,31 +202,6 @@
         }
 
         /// <summary>
-        ///     Adds the specified <see cref="T:System.Data.SqlClient.SqlParameter"/> object to the <see cref="T:System.Data.SqlClient.SqlParameterCollection"/>.
-        /// </summary>
-        /// <returns>
-        ///     A new <see cref="T:System.Data.SqlClient.SqlParameter"/> object.Use caution when you are using this overload of the SqlParameterCollection.Add method to specify integer parameter values. Because this overload takes a <paramref name="value"/> of type <see cref="T:System.Object"/>, you must convert the integral value to an <see cref="T:System.Object"/> type when the value is zero, as the following C# example demonstrates. Copy Codeparameters.Add("@pname", Convert.ToInt32(0));If you do not perform this conversion, the compiler assumes that you are trying to call the SqlParameterCollection.Add (string, SqlDbType) overload.
-        /// </returns>
-        /// <param name="parameterName">
-        ///     The name of the <see cref="T:System.Data.SqlClient.SqlParameter"/> to add to the collection.
-        /// </param>
-        /// <param name="value">
-        ///     A <see cref="T:System.Object"/>.
-        /// </param>
-        /// <exception cref="T:System.ArgumentException">
-        ///     The <see cref="T:System.Data.SqlClient.SqlParameter"/> specified in the <paramref name="value"/> parameter is already added to this or another 
-        ///     <see cref="T:System.Data.SqlClient.SqlParameterCollection"/>. 
-        /// </exception>
-        /// <exception cref="T:System.ArgumentNullException">
-        ///     The <paramref name="value"/> parameter is null.
-        /// </exception>
-        public SqlParameter Add(string parameterName,
-                                object value)
-        {
-            return this.SqlParameterCollectionInstance.Add(parameterName, value);
-        }
-
-        /// <summary>
         ///     Adds a <see cref="T:System.Data.SqlClient.SqlParameter"/> to the <see cref="T:System.Data.SqlClient.SqlParameterCollection"/> given the 
         ///     parameter name and the data type.
         /// </summary>
