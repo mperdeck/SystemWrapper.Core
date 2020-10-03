@@ -11,7 +11,7 @@ namespace SystemWrapper.Tests.IO
     {
 		private FileStream _fileStream;
 
-		[TestFixtureSetUp]
+		[OneTimeSetUp]
 		public void FixtureSetup()
 		{
 			var assembly = System.Reflection.Assembly.GetAssembly(typeof(BinaryReaderWrap));

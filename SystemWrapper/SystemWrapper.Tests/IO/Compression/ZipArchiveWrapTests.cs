@@ -20,7 +20,7 @@ namespace SystemWrapper.Tests.IO.Compression
 
         private readonly object monitorObject = new object();
 
-        [TestFixtureSetUp]
+        [OneTimeSetUp]
         public void FixtureSetup()
         {
             Monitor.Enter(monitorObject);
@@ -56,7 +56,7 @@ namespace SystemWrapper.Tests.IO.Compression
             zipfile.ExtractToDirectory(ArchiveFileName, UnarchiveDirectory);
         }
 
-        [TestFixtureTearDown]
+        [OneTimeTearDown]
         public void FixtureTearDown()
         {
             if (File.Exists(ArchiveFileName))
