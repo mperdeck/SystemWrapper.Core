@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using Rhino.Mocks;
 using SystemInterface.Reflection;
+using SystemWrapper;
 
 namespace SystemWrapper.Samples
 {

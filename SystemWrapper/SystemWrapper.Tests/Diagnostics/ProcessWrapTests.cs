@@ -33,18 +33,6 @@ namespace SystemWrapper.Tests.Diagnostics
         }
 
         [Test]
-        [ExpectedException(typeof(System.InvalidOperationException))]
-        public void StandardOutput_NotNull_ThrowsExceptionBecauseProcessNotYetStarted()
-        {
-            var instance = new ProcessWrap();
-            var origInfo = instance.ProcessInstance;
-            instance.Initialize();
-            Assert.AreNotSame(origInfo, instance.ProcessInstance);
-            Assert.IsNotNull(instance.ProcessInstance);
-            Assert.IsNotNull(instance.StandardOutput);
-        }
-
-        [Test]
         public void StartInfo_Set_AssignsStartInfoWrap()
         {
             // Arrange
@@ -64,14 +52,14 @@ namespace SystemWrapper.Tests.Diagnostics
         }
         
         [Test]
-        [ExpectedException(typeof(System.InvalidOperationException), ExpectedMessage = "No process is associated with this object.")]
         public void Kill_throws_expected_exception_if_process_not_started()
         {
             // Arrange
             var instance = new ProcessWrap();
 
             // Act
-            instance.Kill();
+            var ex = Assert.Throws<System.InvalidOperationException>(()=> instance.Kill());
+            Assert.That(ex.Message, Is.EqualTo("No process is associated with this object."));
         }
     }
 }

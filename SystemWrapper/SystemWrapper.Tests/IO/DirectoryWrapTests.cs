@@ -40,24 +40,10 @@ namespace SystemWrapper.Tests.IO
         }
 
         [Test]
-        [ExpectedException(typeof(ArgumentNullException))]
-        public void ArgumentNullException_is_thrown_if_directorySecurity_is_null()
-        {
-            _directoryWrap.CreateDirectory(path, null);
-        }
-
-        [Test]
         public void Delete_with_subfolders()
         {
             _directoryWrap.Delete(path, true);
             Assert.IsFalse(_directoryWrap.Exists(path), @"Directory TempTest\Sub1 must be removed.");
-        }
-
-        [Test]
-        public void GetAccessControl_test()
-        {
-            IDirectorySecurity directorySecurityWrap = _directoryWrap.GetAccessControl(path);
-            Assert.IsNotNull(directorySecurityWrap.DirectorySecurityInstance);
         }
 
         [Test]

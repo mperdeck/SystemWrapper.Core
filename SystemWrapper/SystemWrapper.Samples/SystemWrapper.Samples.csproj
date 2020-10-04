@@ -6,10 +6,12 @@
 
   <ItemGroup>
     <PackageReference Include="NUnit" Version="3.12.0" />
+	  <PackageReference Include="RhinoMocks" Version="3.6.1" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\SystemInterface\SystemInterface.csproj" />
+    <ProjectReference Include="..\SystemWrapper\SystemWrapper.csproj" />
   </ItemGroup>
 
 </Project>
