@@ -15,12 +15,11 @@
 
     using NUnit.Framework;
 
-    using Testeroids;
     using Testeroids.Mocking;
 
     public abstract class KeyInfoX509DataFactorySpecs
     {
-        public abstract class given_instantiated_Sut : ContextSpecification<KeyInfoX509DataFactory>
+        public abstract class given_instantiated_Sut : Testeroids.ContextSpecification<KeyInfoX509DataFactory>
         {
             #region Context
 
@@ -41,7 +40,7 @@
 
                 private X509Certificate2 ReturnedGetCertificate { get; set; }
 
-                private ITesteroidsMock<IX509Certificate> SpecifiedCertificateMock { get; set; }
+                private Testeroids.ITesteroidsMock<IX509Certificate> SpecifiedCertificateMock { get; set; }
 
                 protected override void InstantiateMocks()
                 {
@@ -82,13 +81,13 @@
                 [Test]
                 public void then_Result_is_not_null()
                 {
-                    Testeroids.Assert.IsNotNull(this.Result);
+                    Assert.IsNotNull(this.Result);
                 }
 
                 [Test]
                 public void then_Result_is_constructed_from_passed_certificate()
                 {
-                    Testeroids.Assert.IsTrue(this.Result.Certificates.Cast<X509Certificate>().Any(cer => cer.Subject == this.ExpectedSubject));
+                    Assert.IsTrue(this.Result.Certificates.Cast<X509Certificate>().Any(cer => cer.Subject == this.ExpectedSubject));
                 }
             }
         }

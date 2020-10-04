@@ -11,11 +11,9 @@
 
     using NUnit.Framework;
 
-    using Testeroids;
-
     public abstract class X509Certificate2CollectionFactorySpecs
     {
-        public abstract class given_instantiated_Sut : ContextSpecification<X509Certificate2CollectionFactory>
+        public abstract class given_instantiated_Sut : Testeroids.ContextSpecification<X509Certificate2CollectionFactory>
         {
             #region Context
 
@@ -47,7 +45,7 @@
                 [Test]
                 public void then_Result_is_not_null()
                 {
-                    Testeroids.Assert.NotNull(this.Result);
+                    Assert.NotNull(this.Result);
                 }
             }
 
@@ -76,7 +74,7 @@
                 [Test]
                 public void then_Result_is_not_null()
                 {
-                    Testeroids.Assert.NotNull(this.Result);
+                    Assert.NotNull(this.Result);
                 }
             }
         }

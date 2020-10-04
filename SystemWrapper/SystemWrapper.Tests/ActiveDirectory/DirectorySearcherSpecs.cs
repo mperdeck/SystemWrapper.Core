@@ -9,13 +9,9 @@
 
     using NUnit.Framework;
 
-    using Testeroids;
-
-    using Assert = Testeroids.Assert;
-
     public abstract class DirectorySearcherSpecs
     {
-        public abstract class given_instantiated_Sut : ContextSpecification<DirectorySearcherWrap>
+        public abstract class given_instantiated_Sut : Testeroids.ContextSpecification<DirectorySearcherWrap>
         {
             #region Context
 

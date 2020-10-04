@@ -1,4 +1,6 @@
-﻿namespace SystemWrapper.Tests.ActiveDirectory
+﻿using NUnit.Framework;
+
+namespace SystemWrapper.Tests.ActiveDirectory
 // ReSharper disable InconsistentNaming
 // ReSharper disable AccessToStaticMemberViaDerivedType
 // ReSharper disable SealedMemberInSealedClass
@@ -8,15 +10,9 @@
     using SystemWrapper.ActiveDirectory;
     using SystemWrapper.ActiveDirectory.Contracts;
 
-    using NUnit.Framework;
-
-    using Testeroids;
-
-    using Assert = Testeroids.Assert;
-
     public abstract class PrincipalContextFactorySpecs
     {
-        public sealed class after_instantiating_Sut : SubjectInstantiationContextSpecification<PrincipalContextFactory>
+        public sealed class after_instantiating_Sut : Testeroids.SubjectInstantiationContextSpecification<PrincipalContextFactory>
         {
             #region Context
 
@@ -34,7 +30,7 @@
             }
         }
 
-        public abstract class given_instantiated_Sut : ContextSpecification<PrincipalContextFactory>
+        public abstract class given_instantiated_Sut : Testeroids.ContextSpecification<PrincipalContextFactory>
         {
             #region Context
 

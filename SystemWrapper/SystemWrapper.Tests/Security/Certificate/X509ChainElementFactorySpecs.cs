@@ -15,17 +15,15 @@
 
     using NUnit.Framework;
 
-    using Testeroids;
-
     public abstract class X509ChainElementFactorySpecs
     {
-        public abstract class given_instantiated_Sut : ContextSpecification<X509ChainElementFactory>
+        public abstract class given_instantiated_Sut : Testeroids.ContextSpecification<X509ChainElementFactory>
         {
             #region Context
 
-            private ITesteroidsMock<IFile> SpecifiedFileMock { get; set; }
+            private Testeroids.ITesteroidsMock<IFile> SpecifiedFileMock { get; set; }
 
-            private ITesteroidsMock<IPath> SpecifiedPathMock { get; set; }
+            private Testeroids.ITesteroidsMock<IPath> SpecifiedPathMock { get; set; }
 
             protected override void InstantiateMocks()
             {
@@ -65,7 +63,7 @@
                 [Test]
                 public void then_Result_is_not_null()
                 {
-                    Testeroids.Assert.NotNull(this.Result);
+                    Assert.NotNull(this.Result);
                 }
             }
 
@@ -149,13 +147,13 @@
                 [Test]
                 public void then_Result_is_not_null()
                 {
-                    Testeroids.Assert.NotNull(this.Result);
+                    Assert.NotNull(this.Result);
                 }
 
                 [Test]
                 public void then_Result_Subject_matches_ExpectedSubject()
                 {
-                    Testeroids.Assert.AreEqual(this.ExpectedSubject, this.Result.Certificate.Subject);
+                    Assert.AreEqual(this.ExpectedSubject, this.Result.Certificate.Subject);
                 }
             }
         }
