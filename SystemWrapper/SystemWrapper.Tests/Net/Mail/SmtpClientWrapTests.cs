@@ -39,16 +39,5 @@ namespace SystemWrapper.Tests.Net.Mail
             Assert.AreEqual(creds, smtpClientWrap.Instance.Credentials);
             Assert.AreEqual(creds, smtpClientWrap.Credentials);
         }
-        
-        [Test]
-        public void EventIsCalled()
-        {
-            bool wasCalled = false;
-            var smtpClientWrap = new SmtpClientWrap();
-            smtpClientWrap.SendCompleted += (o, args) => { wasCalled = true; };
-
-            smtpClientWrap.SendCompletedHandler(null, null);
-            Assert.IsTrue(wasCalled);
-        }
     }
 }
